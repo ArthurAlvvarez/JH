@@ -8,8 +8,13 @@
 </head>
 <body>
     <script>
-        var texto = prompt("Dime texto");
-        palabra(texto);
+        var tope = prompt("Cuantos numeros quieres introducir?");
+        var texto = "";
+        for(i = 0; i < tope; i++){
+            var num = prompt("Dime numeros");
+            texto += num + ",";
+        }
+        media_aritmetica(texto);
     </script>
 </body>
 </html>
