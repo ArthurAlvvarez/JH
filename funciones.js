@@ -170,10 +170,11 @@ function ocultar_vocales (texto){
     vocales = texto.split("");
     var frase = "";
     for(i = 0; i < vocales.length; i++){
-        if(vocales[i] == a && vocales[i] == e && vocales[i] == i && vocales[i] == o && vocales[i] == u){
+        if(vocales[i] == "a" && vocales[i] == "e" && vocales[i] == "i" && vocales[i] == "o" && vocales[i] == "u"){
             frase += "@";
         }else{
             frase += vocales[i];
         }
     }
+    document.write(frase);
 }
