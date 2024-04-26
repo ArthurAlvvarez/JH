@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="formulario">
+    <form action="formulario">
+        <label for="Nombre">Nombre:</label><br>
+        <input type="text" id="nombre" required><br>
+        <label for="Apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" required><br>
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="email" required><br>
+        <label for="fecha">Fecha de nacimiento:</label><br>
+        <input type="date" id="fechaNacimiento" required><br>
+        <label for="Sexo">Sexo:</label>
+        <select name="sexo" id="sexo" required>
+            <option value="0">Seleccione...</option>
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+        </select><br>
+        <label for="Estudios">Nivel de estudios:</label><br>
+        <input type="text" id="estudios" required><br>
+        <button type="submit" id="submit">Enviar</button>
+    </form>
+    </div>
+    <script>
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previene el envío del formulario hasta validar
+
+    var nombre = document.getElementById('nombre').value;
+    var apellidos = document.getElementById('apellidos').value;
+    var email = document.getElementById('email').value;
+    var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+    var sexo = document.getElementById('sexo').value;
+    var estudios = document.getElementById('estudios').value;
+
+    // Validación de nombre y apellidos
+    if (!nombre.trim() || !apellidos.trim()) {
+        // elimina los espacios en blanco al principio y al final de una cadena de texto/string
+        // no elimina los espacios entre las palbras
+        alert('El nombre y apellidos son requeridos.');
+        return;
+    }
+
+    // Validación del correo electrónico
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        //test es un método que comprueba si el string sigue el patrón anteriore
+        alert('Ingrese un correo electrónico válido.');
+        return;
+    }
+
+    // Validación de la fecha de nacimiento (por ejemplo, debe ser mayor de 18 años)
+    var hoy = new Date();
+    var nacimiento = new Date(fechaNacimiento);
+    var edad = hoy.getFullYear() - nacimiento.getFullYear();
+    var diferenciaMeses = hoy.getMonth() - nacimiento.getMonth();
+    if (diferenciaMeses < 0 || (diferenciaMeses === 0 && hoy.getDate() < nacimiento.getDate())) {
+        edad--;
+    }
+    if (edad < 18) {
+        alert('Debes tener al menos 18 años.');
+        return;
+    }
+
+    // Validación del sexo
+    if (!sexo) {
+        alert('Por favor, seleccione su sexo.');
+        return;
+    }
+
+    // Finalmente, si todo está correcto, se puede enviar el formulario
+    alert('Formulario enviado con éxito.');
+    document.getElementById('formulario').submit(); // Comentar o borrar esta línea si se usa AJAX
+});
+</script>
+</body>
+</html>

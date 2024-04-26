@@ -1,0 +1,10 @@
+body{
+    background-color: aqua;
+}
+
+.Contador{
+    display: flex;
+    justify-content: center;
+    margin-top: 18vh;
+    font-size: 100px;
+}

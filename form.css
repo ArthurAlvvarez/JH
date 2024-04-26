@@ -1,0 +1,38 @@
+body{
+    background-color: lightgreen;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 40px;
+    font-family: monospace;
+}
+input{
+    font-size: 40px;
+    padding: 10px;
+    width: 100%;
+    color: darkgreen;
+}
+select{
+    font-size: 25px;
+    padding: 5px;
+    width: 30%;
+    color: darkgreen;
+}
+button{
+    background-color: darkgreen;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+button:hover{
+    background-color: limegreen;
+    color: black;
+}

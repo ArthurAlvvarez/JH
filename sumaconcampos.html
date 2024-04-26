@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero1" placeholder="Introduce un número">
+    <input type="number" id="numero2" placeholder="Introduce otro número">
+    <button onclick="sumarNumeros()">Sumar</button>
+
+    <script>
+        function sumarNumeros(){
+            var num1 = document.getElementById('numero1').value;
+            var num2 = document.getElementById('numero2').value;
+
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+        }
+    </script>
+</body>
+</html>

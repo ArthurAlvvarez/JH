@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cont.css">
+</head>
+<body>
+    <div class="Contador">
+        <h1 id="contador">10</h1>
+   </div>
+    <script>
+        const elementoContador = document.getElementById('contador');
+        let contador = parseInt(elementoContador.textContent, 10);
+
+        const intervalo = setInterval(() => {
+            contador--;
+            elementoContador.textContent = contador;
+
+            if(contador === 0){
+                clearInterval(intervalo);
+                alert('¡HALA MADRID!');
+            }
+        },1000);
+    </script>
+     
+</body>
+</html>

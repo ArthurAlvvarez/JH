@@ -133,7 +133,10 @@ function imprime_paresoimpares(num,par){
             for(i = 0;i <= num; i++){
                 if(i % 2 == 0){
                     resultado += i;
-                    document.write(i + " + ");
+                    document.write(i);
+                    if (i < num - 1 && i != num) {
+                        document.write(" + ");
+                    }
                 }
             }
             document.write(" = " + resultado);
@@ -142,8 +145,11 @@ function imprime_paresoimpares(num,par){
             for(i = 0;i <= num; i++){
                 if(i % 2 != 0){
                     resultado += i;
+                    document.write(i);
+                    if (i < num - 1 && i != num) {
+                        document.write(" + ");
+                    }
                 }
-                document.write(i + " + ");
             }
             document.write(" = " + resultado);
             break;
@@ -162,7 +168,7 @@ function media_aritmetica (array){
         temp += num[i];
     }
     resultado = temp / num.length;
-    document.write("La media de los numeros es " + resultado);
+    document.write("La media de los numeros es " + (temp /2));
 }
 
 function ocultar_vocales (texto){
@@ -170,7 +176,7 @@ function ocultar_vocales (texto){
     vocales = texto.split("");
     var frase = "";
     for(i = 0; i < vocales.length; i++){
-        if(vocales[i] == "a" && vocales[i] == "e" && vocales[i] == "i" && vocales[i] == "o" && vocales[i] == "u"){
+        if(vocales[i] === "a" && vocales[i] === "e" && vocales[i] === "i" && vocales[i] === "o" && vocales[i] === "u"){
             frase += "@";
         }else{
             frase += vocales[i];
