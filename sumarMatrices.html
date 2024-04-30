@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Introduce los valores de cada matriz en su casilla</h2>
+    <form id="matriz">
+        <h3>Matriz A</h3>
+        <input type="number" id="a11" placeholder="A1,1" required> <input type="number" id="a12" placeholder="A1,2" required><br><br>
+        <input type="number" id="a21" placeholder="A2,1" required> <input type="number" id="a22" placeholder="A2,2" required>
+
+        <h3>Matriz B</h3>
+        <input type="number" id="b11" placeholder="B1,1" required> <input type="number" id="b12" placeholder="B1,2" required><br><br>
+        <input type="number" id="b21" placeholder="B2,1" required> <input type="number" id="b22" placeholder="B2,2" required><br><br>
+
+        <button type="button" onclick="sumarMatrices()">Sumar Matrices</button>
+        <button type="button" onclick="restaMatrices()">Restar Matrices</button>
+        <button type="reset">Resetea</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <div id="resultado"></div>
+
+    <script src="sumarMatrices.js"></script>
+</body>
+</html>
